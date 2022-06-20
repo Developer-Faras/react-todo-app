@@ -1,0 +1,12 @@
+.todos{
+    width: 100%;
+    height: 92%;
+    background: #ffffff4a;
+    overflow-y: scroll;
+    border-radius: 4px;
+    padding: 0.5rem;
+}
+
+.todos::-webkit-scrollbar{
+    display: none;
+}
