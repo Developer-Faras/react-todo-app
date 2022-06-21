@@ -9,6 +9,10 @@ import './todo.css';
 const Todo = (props) => {
     const {id, title, desc} = props.todoData;
 
+    const handleDelete = () => {
+        props.onRemove(id);
+    }
+
     return (
         <div className='todo' id={id} >
             <div className="text-container"> 
@@ -16,7 +20,7 @@ const Todo = (props) => {
                 <p className="desc">{desc}</p>
             </div>
             <div className="delete-container"> 
-                <button className="delete-btn">{<FaTrashAlt />}</button>
+                <button onClick={handleDelete} className="delete-btn">{<FaTrashAlt />}</button>
             </div>
         </div>
     );

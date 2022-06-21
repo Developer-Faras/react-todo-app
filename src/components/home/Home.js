@@ -21,11 +21,17 @@ const Home = () => {
 
     }
 
+    const removeTodo = (id) => {
+        const filteredTodo = todos.filter((todo) => todo.id != id);
+
+        setTodos(filteredTodo);
+    }
+
     return (
         <div className='home'>
             <h1 className="main-title">React Todo App</h1>
             <AddTodo onData={handleAddTodo} />
-            <Todos todos={todos} />
+            <Todos todos={todos} onRemove={removeTodo} />
         </div>
     );
 }
