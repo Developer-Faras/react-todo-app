@@ -29,7 +29,6 @@ const AddTodo = (props) => {
         e.preventDefault();
 
         props.onData(formValue);
-
         setFormValue({title: '', desc: ''})
     }
 
