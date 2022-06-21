@@ -1,0 +1,42 @@
+.add-todo{
+    width: 100%;
+}
+.add-todo form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+}
+.add-todo form .input-box{
+    width: 75%;
+}
+.add-todo form .input-box input{
+    width: 100%;
+    padding: 0.2rem;
+    font-size: 13px;
+    border: 1px solid #a19b9b;
+    border-radius: 4px;
+    background: rgb(255 255 255 / 31%);
+    color: #464545;
+    font-weight: bold;
+}
+.add-todo form .input-box input#title {
+    margin-bottom: 0.3rem;
+}
+
+.add-todo form .input-box input#desc{
+    height: 50px;
+}
+
+.add-todo form input[type="submit"]{
+    width: 20%;
+    height: 82px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #686666;
+    border-radius: 4px;
+    border: 1px solid #555;
+    background: #ffffff57;
+    cursor: pointer;
+}
