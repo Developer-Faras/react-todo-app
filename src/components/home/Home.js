@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { v4 as uuidv4 } from 'uuid';
+
 import AddTodo from '../addtodo/AddTodo';
 import Todos from '../todos/Todos';
 
@@ -6,75 +8,24 @@ import Todos from '../todos/Todos';
 import './home.css';
 
 const Home = () => {
-    const dummyTodos = [
-        {
-            id: 1,
-            title: "This Is Todo 01",
-            desc: "This Is Todo 01 Description"
-        },
-        {
-            id: 2,
-            title: "This Is Todo 02",
-            desc: "This Is Todo 02 Description"
-        },
-        {
-            id: 3,
-            title: "This Is Todo 03",
-            desc: "This Is Todo 03 Description"
-        },
-        {
-            id: 4,
-            title: "This Is Todo 03",
-            desc: "This Is Todo 03 Description"
-        },
-        {
-            id: 5,
-            title: "This Is Todo 03",
-            desc: "This Is Todo 03 Description"
-        },
-        {
-            id: 6,
-            title: "This Is Todo 03",
-            desc: "This Is Todo 03 Description"
-        },
-        {
-            id: 7,
-            title: "This Is Todo 03",
-            desc: "This Is Todo 03 Description"
-        },
-        {
-            id: 8,
-            title: "This Is Todo 03",
-            desc: "This Is Todo 03 Description"
-        },
-        {
-            id: 9,
-            title: "This Is Todo 03",
-            desc: "This Is Todo 03 Description"
-        },
-        {
-            id: 10,
-            title: "This Is Todo 03",
-            desc: "This Is Todo 03 Description"
-        },
-        {
-            id: 11,
-            title: "This Is Todo 03",
-            desc: "This Is Todo 03 Description"
-        },
-        {
-            id: 12,
-            title: "This Is Todo 03",
-            desc: "This Is Todo 03 Description"
-        },
-    ];
+    // Deaclare All State
+    const [todos, setTodos] = useState([]);
 
-     
+    // Deaclare All Methods
+    const handleAddTodo = (formData) => {
+        const {title, desc} = formData;
+
+        setTodos((oldTodos) => {
+            return [...oldTodos, {id: uuidv4(), title, desc}];
+        });
+
+    }
+
     return (
         <div className='home'>
             <h1 className="main-title">React Todo App</h1>
-            <AddTodo />
-            <Todos todos={dummyTodos} />
+            <AddTodo onData={handleAddTodo} />
+            <Todos todos={todos} />
         </div>
     );
 }
